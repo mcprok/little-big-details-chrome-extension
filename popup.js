@@ -29,7 +29,7 @@ function createEntry(data, index) {
   var $div = $('<div class="entry"></div>');
   var $snippet = $('<span class="entrySnippet">' + data.contentSnippet + '</span>');
   var $publishedDate = $('<span class="publishedDate"> #' +  index + ' ' + data.publishedDate + '</span>');
-  var $image = $('<div class="entryImage"><a href="' + data.link + '">' + retrieveImageFromContent(data.content) + '</a></div>');   
+  var $image = $('<div class="entryImage"><a tabindex="-1" href="' + data.link + '">' + retrieveImageFromContent(data.content) + '</a></div>');   
   
   $div.append($publishedDate).append($snippet).append($image);
 
