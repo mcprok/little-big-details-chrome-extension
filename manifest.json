@@ -1,0 +1,20 @@
+{
+"name": "Little big details.",
+"version": "1.0",
+"description": "Show 20 newest posts from http://littlebigdetails.com/",
+"permissions": [
+	"https://www.google.com/*"
+],
+"icons" : { 
+	"16": "lbd-16.png",
+    "48": "lbd-48.png",
+    "128": "lbd-128.png"
+},
+"browser_action": {
+	"default_title": "Little big details extension",
+	"default_icon" : "lbd-16.png",
+	"default_popup": "popup.html"
+},
+"manifest_version": 2,
+"content_security_policy": "script-src 'self' https://ajax.googleapis.com https://www.google.com; object-src 'self'"
+}
