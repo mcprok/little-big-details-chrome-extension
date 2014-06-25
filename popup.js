@@ -9,7 +9,7 @@ google.setOnLoadCallback(OnLoad);
 
 function feedLoaded(result) {
   if (!result.error) {
-    console.log(result);   
+      
     var container = $("#content");
     container.innerHTML = '';
     
@@ -17,16 +17,13 @@ function feedLoaded(result) {
     $header.text(result.feed.description);
     $header.append($('<span class="headerDesc">Newest ' + result.feed.entries.length + ' posts from <a tabindex="-1" href="' + result.feed.link + '" >' +  result.feed.link +  '</a></span>'));
     container.append($header);
-    createEntry(result.feed.entries[0]);
         
     for (var i = 0; i < result.feed.entries.length; i++) {
       var entry = result.feed.entries[i];
           container.append(createEntry(entry, i+1));
     }
   }
-
 }
-    
     
 function createEntry(data, index) {
   var $div = $('<div class="entry"></div>');
