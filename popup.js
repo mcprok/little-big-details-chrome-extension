@@ -9,7 +9,7 @@ google.setOnLoadCallback(OnLoad);
 
 function feedLoaded(result) {
   if (!result.error) {
-       
+    console.log(result);   
     var container = $("#content");
     container.innerHTML = '';
     
@@ -32,7 +32,7 @@ function createEntry(data, index) {
   var $div = $('<div class="entry"></div>');
   var $snippet = $('<span class="entrySnippet">' + data.contentSnippet + '</span>');
   var $publishedDate = $('<span class="publishedDate"> #' +  index + ' ' + data.publishedDate + '</span>');
-  var $image = $('<div class="entryImage">' + retrieveImageFromContent(data.content) + '</div>');   
+  var $image = $('<div class="entryImage"><a href="' + data.link + '">' + retrieveImageFromContent(data.content) + '</a></div>');   
   
   $div.append($publishedDate).append($snippet).append($image);
 
